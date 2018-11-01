@@ -9,29 +9,29 @@ import javax.persistence.Id;
  * @author michael
  */
 @Entity // This tells Hibernate to make a table out of this class
-public class Member {
+public class BandMember {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer id;
     private String name;
     private String specialty;
     private boolean singer;
 
-    public Member() {
+    public BandMember() {
     }
     
-    public Member(Integer id) {
+    public BandMember(Integer id) {
 	this.id = id;
     }
     
-    public Member(String name, String specialty, boolean singer) {
+    public BandMember(String name, String specialty, boolean singer) {
 	this.name = name;
 	this.specialty = specialty;
 	this.singer = singer;
     }
     
-    public Member(Integer id, String name, String specialty, boolean singer) {
+    public BandMember(Integer id, String name, String specialty, boolean singer) {
 	this.id = id;
 	this.name = name;
 	this.specialty = specialty;
