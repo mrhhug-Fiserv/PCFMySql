@@ -1,6 +1,7 @@
 package com.webreadllc.PCFMySql;
 
 import java.util.Optional;
+import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -60,5 +61,13 @@ public class MainController {
     @DeleteMapping("/api/deleteAll")
     public void deleteAll() {
 	userRepository.deleteAll();
+    }
+
+    @PostConstruct
+    public void initIt() {
+	try {
+		userRepository.configureTable();
+	} catch (Exception e){
+	}
     }
 }

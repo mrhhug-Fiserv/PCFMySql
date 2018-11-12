@@ -8,7 +8,9 @@ import javax.persistence.Id;
 /**
  * @author michael
  */
-@Entity // This tells Hibernate to make a table out of this class
+// hibbernate can make a table out of this class
+// turn on spring.jpa.hibernate.ddl-auto=create
+@Entity 
 public class BandMember {
 
     @Id
